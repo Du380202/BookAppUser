@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DanhSachSanPham">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarDanhSachSp"
+        android:background="#17CA21"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Danh sách sản phẩm"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_gravity="right"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgSearch"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/ic_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:tint="@android:color/white" />
+
+            <FrameLayout
+                android:id="@+id/framegiohang"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:layout_width="55dp"
+                android:layout_height="match_parent">
+                <com.nex3z.notificationbadge.NotificationBadge
+                    android:id="@+id/menu_giohang"
+                    android:layout_gravity="top|right"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"/>
+                <ImageView
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/baseline_shopping_cart_24"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:tint="@android:color/white" />
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleviewDanhSachSp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarDanhSachSp"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

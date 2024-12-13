@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="196dp"
+    android:layout_height="250dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginStart="2dp"
+    android:layout_marginEnd="2dp"
+    android:background="@drawable/grey_background"
+    android:padding="8dp"
+    android:elevation="4dp">
+
+    <!-- Ảnh chính -->
+    <ImageView
+        android:id="@+id/imgBook"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="1.0"
+        app:srcCompat="@drawable/sach_trinh_tham" />
+
+    <!-- View nền phía dưới -->
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/white_background_pop2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgBook" />
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/titleBook"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Tên sách - Tiêu đề"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@id/view"
+        app:layout_constraintTop_toTopOf="@id/view"
+        app:layout_constraintEnd_toEndOf="@id/view" />
+
+    <!-- RatingBar -->
+    <LinearLayout
+        android:id="@+id/ratingSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/titleBook"
+        app:layout_constraintTop_toBottomOf="@id/titleBook"
+        app:layout_constraintEnd_toEndOf="@id/titleBook">
+
+        <!-- RatingBar -->
+        <RatingBar
+            android:id="@+id/ratingBarStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="4.0"
+            android:layout_marginEnd="4dp"
+            style="@style/Widget.AppCompat.RatingBar.Small" />
+
+        <!-- Text hiển thị điểm đánh giá -->
+        <TextView
+            android:id="@+id/txtStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.0/5"
+            android:textSize="12sp"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <!-- Giá tiền -->
+    <LinearLayout
+        android:id="@+id/priceSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/ratingSection"
+        app:layout_constraintTop_toBottomOf="@id/ratingSection"
+        app:layout_constraintEnd_toEndOf="@id/ratingSection">
+
+        <!-- Giá gốc (giảm) -->
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$150"
+            android:textSize="12sp"
+            android:textColor="@color/grey"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="2dp" />
+
+        <TextView
+            android:id="@+id/txtDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$123"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/red" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
